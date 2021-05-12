@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Greet Testing</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/new_changes.css">
+</head>
+<body style="background-color: #1d1919;font-family: 'Lato', sans-serif;">
+    <header>
+      <div class="header-div">
+         <button class="btn btn-light btn-demo" style="border-bottom-left-radius: 10%;" data-toggle="modal" data-target="#myModal1" ><i class='fas fa-users top'></i></button>
+         <button class="btn btn-light"  data-toggle="modal" data-target="#myModal2"><i class='far fa-comment-dots top'></i></button>
+         <button class="btn btn-light"  data-toggle="modal" data-target="#myModal3"><i class='fas fa-user'></i></button>
+      </div>
+    </header>
+    <section>
+          <div class="modal fade right" id="myModal3">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content" style="padding: 20px 10px 20px 10px;">
+                    <button type="button" class="close" style="right: 30px;position:absolute;" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <div id = "remoteVideoDiv" style="text-align:center;margin-top: 50px;">
+                    <p>Currently Speaking</p>
+                    <video id="remoteVideo" autoplay muted></video>
+                  </div>
+               </div>
+             </div>
+           </div>
+    </section>
+
+    <div class="container-fluid"  class="row d-flex justify-content-center videoElement" style="padding: 0 0 100px 0">
+    
+          <div id = "videos" style="text-align:center">
+              <div id="bleh" style="display: inline-block;">
+                <video id="localVideo" autoplay muted poster="/img/Color-blue.jpg"></video>
+                <p style="    display: block;
+                border-style: solid;
+                border-width: 2px;
+                border-color: white;
+                margin-bottom: 0px; color: white; text-align: center; margin-left: 0px; background: rgb(0, 0, 0); margin-top: 0px; width: 100%;">You</p>  
+              </div>
+            </div>
+
+    </div>
+          
+    <footer>
+        <div class="footer" style="padding-bottom:65px;">
+            <div class="row hide">
+                <div class="rigt-Btn">
+                  <button class="btn btn-outline-dark optional meetingInfoBtn" type="button" data-toggle="modal" data-target="#myModal4">meeting details <i class="fa fa-angle-double-up" style="margin-left:40px ;"></i></button>               
+                </div>
+                <div class="mid-Button">
+                  <table>
+                    <td><button class="btn btn-outline-dark  mainButton" id="startVideoCall" data-toggle="tooltip" title="Start video call!" ><i class='fas icon'>&#xf03d;</i></button></td>
+                    <td><button class="btn btn-outline-dark  mainButton" id="startAudioCall" data-toggle="tooltip" title="Start audio call!" ><i class='fas icon'>&#xf130;</i></button></td>
+                    <td><button class="btn btn-outline-dark  mainButton" id="toggleAudio"data-toggle="tooltip" title="Toggle Audio button!"><i class='fas icon'>&#xf130;</i></button></td>
+                    <td><button class="btn btn-outline-dark  mainButton" onclick="window.location.href='#popup1'" id="togglePen" title="Toggle Pen!"><i class='fas icon'>&#xf304;</i></button></td>
+                    <td><button class="btn btn-outline-dark  mainButton" id="toggleVideo" data-toggle="tooltip" title="Toggle Video button!" ><i class='fas icon'>&#xf03d;</i></button></td>
+                    <td><button class="btn btn-outline-dark  mainButton" id="hangupButton" data-toggle="tooltip" title="Hangup!"><i  class="fa icon">&#xf04d;</i></button></td>
+                  </table>
+                </div>
+                <div class="left-btn">
+                    <button class="btn btn-outline-dark optional screenShare" id="toggleScreenShare" data-toggle="tooltip" title="Screen Share!">present now <i class='fas icon'  style="margin-left:40px;">&#xf108;</i></button>
+                </div>
+                <div class="left-corner-btn">
+                    <button class="btn btn-outline-dark  other" data-toggle="modal" data-target="#myModal6" ><i class="fa icon">&#xf141;</i></button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<!-- Participants list box  -->
+    <!-- Modal -->
+	<div class="modal right fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+                    <h3>Participants</h3>
+					<button type="button" class="close" style="margin-right: 5px;" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				</div>
+				<div class="modal-body">
+				   <p>
+                    <ol id ="requests" style="cursor: pointer;"></ol>
+			       </p>
+				</div>
+			</div>
+			<!-- modal-content -->
+		</div>
+		<!-- modal-dialog -->
+	</div>
+    <!-- modal -->
+    
+
+    <!-- chat Box -->
+    <!-- Modal -->
+	<div class="modal right fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+
+				<div class="modal-header">
+                    <h3>Chat</h3>
+					<button type="button" class="close" style="margin-right: 5px;" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+
+				<div class="modal-body">
+				   <p>
+              <p>Chat</p>
+           </p>
+            <div style="bottom:10px;position:absolute;width: 90%;">
+              <div class="row" style="padding: 0 5% 0 5%;text-align: center;">
+                <input class="form-control" style="width:70%" type="text">
+                <button class="btn btn-dark btn-sm" style="width:30%;">Send</button>
+              </div>
+            </div>
+				</div>
+			</div>
+			<!-- modal-content -->
+		</div>
+		<!-- modal-dialog -->
+	</div>
+  <!-- modal -->
+
+
+
+  <div class="modal fade penCanvas" id="myModal6">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content" style="padding: 20px 10px 20px 10px;">
+         <button class="btn btn-outline-dark optional"
+          style="background-color: brown;color: white;border-radius: 0%;"
+          data-toggle="modal" data-target="#myModal5" 
+          >Meeting Details</button>
+      </div>
+    </div>
+</div>
+
+  
+  <!-- Info model -->
+  <div class="modal fade penCanvas" id="myModal4">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content" style="padding: 20px 10px 20px 10px;">
+        <% for(var i=0;i<body.length;i++){ %>
+            <div  id="inputs">
+              <table>
+                <tr>
+                  <td><p>Host Name: </p></td>
+                  <td><p  id="uname" name="uname" value="<%=body[i].userName%>"><%=body[i].userName%></p></td>
+                </tr>
+                <tr>
+                  <td><p>Meeting Id:</p></td>
+                  <td><p  id="rname" name="rname" value="<%=body[i].meetingId%>"><%=body[i].meetingId%></p></td>
+                </tr>
+                <tr>
+                  <td><p>Meeting link: </p></td>
+                  <td><p>https://video-greet.herokuapp.com/Join_meeting<%=body[i].meetingId%></p></td>
+                </tr>
+                </table>
+            </div>
+            <%}%>
+      </div>
+    </div>
+</div>
+
+ <!-- Info model -->
+ <div class="modal fade penCanvas" id="myModal5">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content" style="padding: 20px 10px 20px 10px;">
+      <% for(var i=0;i<body.length;i++){ %>
+          <div  id="inputs">
+            <table>
+              <tr>
+                <td><p> Name: </p></td>
+                <td><p  id="uname" name="uname" value="<%=body[i].userName%>"><%=body[i].userName%></p></td>
+              </tr>
+              <tr>
+                <td><p>Meeting Id:</p></td>
+                <td><p  id="rname" name="rname" value="<%=body[i].meetingId%>"><%=body[i].meetingId%></p></td>
+              </tr>
+              <tr>
+                <td><p>Meeting link: </p></td>
+                <td><p>https://video-testing.herokuapp.com/Join_meeting<%=body[i].meetingId%></p></td>
+              </tr>
+              </table>
+          </div>
+          <%}%>
+    </div>
+  </div>
+</div>
+<div class="d-flex justify-content-center">
+  <div id = "progressBar" class="spinner-border text-danger" style="width: 5rem; height: 5rem;" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+<div id="popup1" class="overlay" style="top:0;z-index:10">
+  <div class="popup">
+    <a id="closeAnotate" class="close" style="color: black;z-index: 20;" href="#">&times;</a>
+  <div id="colors">
+<label>Color:
+<select id="selectedColor">
+  <option value="red">Red</option>
+  <option value="blue">Blue</option>
+  <option value="green">Green</option>
+  <option value="black">Black</option>
+  <option value="yellow">Yellow</option>        
+</select>
+</label>
+</div>
+    <div class="d-flex justify-content-center">
+
+<canvas style="top:0;height: 100%;width: 100%;" id="canvas"></canvas>
+    </div> 
+  </div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/main.js"></script>
+<script src="js/hark.js"></script>
+<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    
+</body>
+</html>

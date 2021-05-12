@@ -1,0 +1,340 @@
+.rigt-Btn{
+    left:0;position:fixed;
+}
+.mid-Button{
+    text-align:center;
+    margin: 7px auto;
+    display: inline;
+}
+#startVideoCall{
+    font-size: 13px;
+    font-weight: bold;
+  }
+  #startAudioCall{
+    font-size: 13px;
+    font-weight: bold;
+  }
+.left-btn{
+    right: 40px;position: absolute;
+}
+.left-corner-btn{
+    right: 0px;position: absolute;
+}
+section .videoElement{
+    width:337px;
+    height:337px;
+    max-width: 100%;
+    display:grid;
+    grid-template-columns: auto auto auto auto;
+    float: left;
+}
+#localVideo{
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+    margin-bottom: 0px; 
+    height: 200px;
+    width: 200px;
+}
+.allRemVideos{
+    height: 200px;
+    width: 200px;
+}
+.header-div{
+    background-color: white;
+    border-bottom-left-radius: 5%;
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
+    z-index:1;right: 0;position: fixed;
+}
+.js-is-visible {
+    opacity: 1;
+}
+.btn-light{
+    background-color: white;
+    margin-left: 10px;
+    border-radius: 0%;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .popup {
+    margin: 0px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 75%;
+    position: relative;
+    transition: all 5s ease-in-out;
+  }
+  
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+  }
+  .popup .close:hover {
+    color: #06D85F;
+  }
+  .popup .content {
+    max-height: 30%;
+    overflow: auto;
+  }
+footer{
+    opacity: 1;
+}
+/*footer{
+    opacity: 1;
+    pointer-events: all;
+}*/
+.footer{
+    height:10%;
+    border-style: none;
+    position: fixed;
+    bottom:0px;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    display: block;
+}
+.footer .optional{
+    width: 100%;
+    border-radius: 0%;
+    border-style: none;
+    height: 85px;
+    text-align: center;
+}
+.footer .optional:hover{
+    background-color: brown;
+}
+.footer .btn-primary .icon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+.footer .mainButton{
+    width: 60px;
+    height: 60px;
+    position: relative;
+    border-radius: 100%;
+    margin:1% 0.5% 1% 0.5% ;
+    color: brown;
+    border-color: #888888; 
+}
+.footer .mainButton:hover{
+    color: white;
+    background-color: brown;
+    
+}
+
+/*############### */
+.modal.right .modal-dialog {
+    position: fixed;
+    margin: auto;
+    width: 400px;
+    height: 100%;
+    -webkit-transform: translate3d(0%, 0, 0);
+        -ms-transform: translate3d(0%, 0, 0);
+         -o-transform: translate3d(0%, 0, 0);
+            transform: translate3d(0%, 0, 0);
+}
+.modal.right .modal-content {
+    height: 100%;
+    overflow-y: auto;
+}
+.modal.right .modal-body {
+    padding: 0 15px 80px;
+}
+/*Right*/
+.modal.right.fade .modal-dialog {
+    right: -20px;
+    -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+       -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+         -o-transition: opacity 0.3s linear, right 0.3s ease-out;
+            transition: opacity 0.3s linear, right 0.3s ease-out;
+}
+.modal.right.fade.in .modal-dialog {
+    right: 0;
+}
+/* ----- MODAL STYLE ----- */
+.modal-content {
+    border-radius: 0;
+    border: none;
+}
+.modal-header {
+    border-bottom-color: #EEEEEE;
+    background-color: #FAFAFA;
+}
+.other{
+    display: none;
+}
+
+
+@media only screen and (max-width: 600px){
+    .screenShare{
+        display:none;
+    }
+
+    .allRemVideos{
+        height: 150px;
+        width: 150px;
+    }
+    #localVideo{
+        height: 150px;
+        width: 150px;
+    }
+    p{
+        font-size: 10px;
+    }
+    #startVideoCall{
+        font-size: 8px;
+        font-weight: bold;
+      }
+      #startAudioCall{
+        font-size: 8px;
+        font-weight: bold;
+      }
+    section .videoElement{
+        width:400px;
+        height:337px;
+        max-width: 100%;
+        display:grid;
+        grid-template-columns: auto auto auto auto;
+        float: left;
+     
+    }
+    .footer{
+        height:10%;
+        border-style: none;
+        position: fixed;
+        bottom:0px;
+        width: 100%;
+        background-color: white;
+        text-align: center;
+        display: block;
+    }
+    .footer .optional{
+        width: 100%;
+        border-radius: 0%;
+        border-style: none;
+        height: 65px;
+        text-align: center;
+        border-style: none;
+        
+
+    }
+    .footer .optional:hover{
+        background-color: brown;
+    }
+    .footer .btn-primary .icon{
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        height: 20%;
+        transform: translate(-50%, -50%);
+        width: 10px;
+        height: 10px;
+        display: block;
+    }
+    
+    .footer .mainButton{
+        width: 50px;
+        height: 50px;
+        position: relative;
+        border-radius: 100%;
+        margin:1% 0.5% 1% 0.5% ;
+        color: brown;
+        border-color: #888888; 
+    }
+    .footer .mainButton:hover{
+        color: white;
+        background-color: brown;
+        
+    }
+    .other{
+       margin: 20% 0 20% 0; 
+       border-radius: 0%;
+       height: 50px;
+       border-style: none;
+    }
+    .other:hover{
+        background-color: brown;
+        color: white;
+     }
+    #toggleScreenShare{
+        display: none;
+    }
+    .meetingInfoBtn{
+        display: none;
+    }
+    .other{
+        display: block;
+    }
+    .meetingDetail{
+        width: 30px;
+        right: 0;
+        position: absolute;
+    }
+    /* #### */
+    .modal.right .modal-dialog {
+        position: fixed;
+        margin: auto;
+        width: 300px;
+        height: 100%;
+        -webkit-transform: translate3d(0%, 0, 0);
+            -ms-transform: translate3d(0%, 0, 0);
+             -o-transform: translate3d(0%, 0, 0);
+                transform: translate3d(0%, 0, 0);
+    }
+    .modal.right .modal-content {
+        height: 100%;
+        overflow-y: auto;
+    }
+    .modal.right .modal-body {
+        padding: 15px 15px 80px;
+    }
+    /*Right*/
+    .modal.right.fade .modal-dialog {
+        right: 0;
+        -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+           -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+             -o-transition: opacity 0.3s linear, right 0.3s ease-out;
+                transition: opacity 0.3s linear, right 0.3s ease-out;
+    }
+    .modal.right.fade.in .modal-dialog {
+        right: 0;
+    }
+    /* ----- MODAL STYLE ----- */
+    .modal-content {
+        border-radius: 0;
+        border: none;
+    }
+    .modal-header {
+        border-bottom-color: #EEEEEE;
+        background-color: #FAFAFA;
+    }
+}   

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Greet Testing</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="modal" data-target="#myModal" href="#">Join meeting</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="modal" data-target="#myModal2" href="#">Host meeting</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="modal" data-target="#myModal3" href="#">Help</a>
+                </li>
+              </ul>
+        </nav>
+        <section id="home">
+        <div class="top-div">
+            <div class="link-div">
+                <a class="link" href="">Signup</a>
+                <a class="link" href="">Login</a>
+            </div>
+        </div>    
+        <div class="container">
+            <div>
+                <img src="img/video_conference.png" style = "width : 300px; height:300px"alt="">
+                <hr>
+                <div style="text-align: center;">
+                    <p class="homeHeading">Welcome to Study meet, an indegenious solution for all your video conferencing needs!</p>
+    
+                      <p class = "homeHeading">Start by either hosting a conference using Host Meeting or join a conference using the Join Meeting option provided below.</p>
+                    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Join meeting</button>
+                    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2">Host meeting</button>
+                </div>
+            </div>
+        </div>
+        </section>
+        <div class="modal fade" id="myModal">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div>
+                  <button type="button" class="close" style="padding: 10px 20px;" data-dismiss="modal">&times;</button>
+                    <form class="form-signin" action="/join_meeting" method="post">              
+                      <div class="first-container">    
+                        <h1 class="h3 mb-3 font-weight-normal">Join Meeting</h1><!--when you want to join a meeting-->
+                        <label for="name" class="sr-only">User Name</label><!-- It represents a caption for an item in user interface-->
+                            <input type="text" id="name" name="name" class="form-control" placeholder="User name" required="" autofocus="">
+                        <label for="text" class="sr-only">Meeting ID</label>
+                        <input type="text" name="meetingID" id="inputusername" class="form-control" placeholder="Meeting ID" required="" autofocus="">
+                        <div class="checkbox mb-3">
+                        </div>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Join</button>
+                      </div>
+                      <p class="mt-5 mb-3 text-muted">© 2020</p>
+                      </div>
+                    </form>
+                </div>
+                  
+            </div>
+          </div>
+          <!-- This code execute when you want to host a meeting-->
+          <div class="modal fade" id="myModal2">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div>
+                      <button type="button" class="close" style="padding: 10px 20px;" data-dismiss="modal">&times;</button>
+                      <form class="form-signin" action="/host_meeting" method="post"><!-- This executes when you want to execute the host meeting-->
+                          <div class="first-container">
+                            <h1 class="h3 mb-3 font-weight-normal">Host Meeting</h1><!--host meeting heading -->
+                            <label for="name" class="sr-only">User Name</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="User name" required="" autofocus="">
+                            <div class="checkbox mb-3">
+                            </div>
+                             <button class="btn btn-lg btn-primary btn-block" type="submit">Host</button>
+                          </div>
+                          <p class="mt-5 mb-3 text-muted">© 2020</p>
+                        </form>
+                    </div>
+                </div>
+              </div>
+        </div>
+        <div class="modal fade" id="myModal3">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div>
+                  <button type="button" class="close" style="padding: 10px 20px;" data-dismiss="modal">&times;</button>
+                  <form class="form-signin" action="/host_meeting" method="post"><!-- This executes when you want to execute the host meeting-->
+                    <h4 class="helpHeading"> HELP CENTER & GUIDELINES FOR USE OF APP</h4>
+                    <ol>
+                     <li>Use any of operating system(Apple, Windows , Mac , Linux, Android, iOS)</li>
+                     <li>Use a supported web browser:-</li>
+                     <ul>
+                       <li>Google Chrome browser.</li>
+                     </ul>
+                     <li>Allow App  to use your camera and microphone </li>
+                     <li>Start and join video meetings:-</li>
+                     <ul>
+                       <li>Join a video meeting with a meeting link URL.</li>
+                     </ul>
+                     <li>Host can Add and remove people from a video meeting on click the Add/remove in participiants list</li>
+                     <li>Start a video meeting from meeting link:-</li>
+                     <ul>
+                       <li>join using your computer's camera for video and your computer's microphone for audio</li>
+                       <li>You will find a dialog box in top corner where you can fill your name with (max 8 character) </li>
+                     </ul>
+                     <li>During the meeting:-</li>
+                     <ul>
+                       <li>Mute Button for avoid the noise </li>
+                       <li>Share screen by using the Share Screen button </li>
+                       <li> Audio button to do only audio conference</li>
+                       <li> Hang up button for leave the meeting</li>
+                      </ul>
+                   </ol>
+                    </form>
+                </div>
+            </div>
+          </div>
+    </div>
+    </header> 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
